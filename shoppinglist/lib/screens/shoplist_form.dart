@@ -131,15 +131,18 @@ class _ShopFormPageState extends State<ShopFormPage> {
                               // TODO: Sesuaikan field data sesuai dengan aplikasimu
                           }));
                           if (response['status'] == 'success') {
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(const SnackBar(
                               content: Text("Produk baru berhasil disimpan!"),
                               ));
+                              // ignore: use_build_context_synchronously
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(builder: (context) => MyHomePage()),
                               );
                           } else {
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(const SnackBar(
                                   content:

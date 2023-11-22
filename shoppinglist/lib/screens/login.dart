@@ -77,15 +77,18 @@ class _LoginPageState extends State<LoginPage> {
                                 if (request.loggedIn) {
                                     String message = response['message'];
                                     String uname = response['username'];
+                                    // ignore: use_build_context_synchronously
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(builder: (context) => MyHomePage()),
                                     );
+                                    // ignore: use_build_context_synchronously
                                     ScaffoldMessenger.of(context)
                                         ..hideCurrentSnackBar()
                                         ..showSnackBar(
                                             SnackBar(content: Text("$message Selamat datang, $uname.")));
                                     } else {
+                                    // ignore: use_build_context_synchronously
                                     showDialog(
                                         context: context,
                                         builder: (context) => AlertDialog(
